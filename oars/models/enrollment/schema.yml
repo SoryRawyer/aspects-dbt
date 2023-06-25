@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: enrollments_by_day
-    description: "One record for each day after a student first enrolls in a course. Useful for plotting enrollments by day"
+    description: "One record for each day after a learner first enrolls in a course. Useful for plotting enrollments by day"
     columns:
       - name: enrollment_status_date
         description: "The date of a specific enrollment status, in YYYY-MM-DD format"

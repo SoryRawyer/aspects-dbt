@@ -21,7 +21,11 @@ select
   object_id,
   course_id,
   org,
-  event_type as enrollment_status,
+  case verb_id
+      when 'http://adlnet.gov/expapi/verbs/registered' then 'registered'
+      when 'http://id.tincanapi.com/verb/unregistered' then 'unregistered'
+      else 'N/A'
+  end as enrollment_status,
   enrollment_mode
 from
   {{ ref('stg_enrollment_windows') }}
