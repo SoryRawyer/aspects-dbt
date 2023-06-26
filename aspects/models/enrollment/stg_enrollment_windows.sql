@@ -5,6 +5,7 @@ with enrollments_ranked as (
     course_id,
     org,
     enrollment_mode,
+    verb_id,
     emission_time as window_start_at,
     anyOrNull(emission_time)
       over (partition by org, course_id, actor_id order by emission_time asc rows between 1 following and 1 following)
@@ -20,6 +21,7 @@ select
   course_id,
   org,
   enrollment_mode,
+  verb_id,
   date_trunc('day', window_start_at) as window_start_date,
   date_trunc('day', coalesce(window_end_at, now())) as window_end_date,
   rank

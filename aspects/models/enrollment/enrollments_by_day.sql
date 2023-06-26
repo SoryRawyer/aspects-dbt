@@ -21,6 +21,11 @@ select
   object_id,
   course_id,
   org,
-  enrollment_mode
+  enrollment_mode,
+  if(
+        verb_id = 'http://adlnet.gov/expapi/verbs/registered',
+        'registered',
+        'unregistered'
+    ) as enrollment_status
 from
   {{ ref('stg_enrollment_windows') }}
