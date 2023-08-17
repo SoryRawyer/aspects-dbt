@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fact_navigation
+    description: "A dataset of all navigation events with entity names joined in"
+    columns:
+      - name: emission_time
+      - name: org
+      - name: course_key
+      - name: course_name
+      - name: course_run
+      - name: actor_id
+      - name: block_location
+      - name: block_name
+      - name: object_type
+      - name: starting_position
+        description: "The integer number of the tab the learner was on before navigating"
+      - name: ending_point
+        description: "The destination of the navigation event, expressed either as an integer tab position, the string 'next unit', or the string 'previous unit'"
