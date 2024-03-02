@@ -6,7 +6,8 @@ select
     blocks.location as block_id,
     blocks.block_name as block_name,
     {{ section_from_display("blocks.display_name_with_location") }} as section_number,
-    {{ subsection_from_display("blocks.display_name_with_location") }} as subsection_number,
+    {{ subsection_from_display("blocks.display_name_with_location") }}
+    as subsection_number,
     splitByString(' - ', blocks.display_name_with_location)[1] as hierarchy_location,
     blocks.display_name_with_location as display_name_with_location
 from {{ source("event_sink", "course_block_names") }} blocks
