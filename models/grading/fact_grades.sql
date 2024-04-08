@@ -43,9 +43,6 @@ select
     grades.scaled_score as scaled_score,
     {{ get_bucket("scaled_score") }} as grade_bucket
 from grades
-join
-    {{ source("event_sink", "course_names") }} courses
-    on grades.course_key = courses.course_key
+join {{ ref("course_names") }} courses on grades.course_key = courses.course_key
 left join
-    {{ source("event_sink", "course_block_names") }} blocks
-    on grades.entity_id = blocks.location
+    {{ ref("course_block_names") }} blocks on grades.entity_id = blocks.location

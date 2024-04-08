@@ -21,5 +21,5 @@ select
     enrollments.enrollment_status as enrollment_status
 from enrollments
 join
-    {{ source("event_sink", "course_names") }} courses
+    {{ ref("course_names") }} courses
     on enrollments.course_key = courses.course_key

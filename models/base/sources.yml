@@ -73,3 +73,113 @@ sources:
             description: "Date of the profile image upload"
           - name: phone_number
             description: "The phone number of the user"
+
+      - name: course_blocks
+        columns:
+          - name: org
+            data_type: string
+          - name: course_key
+            data_type: string
+          - name: location
+            data_type: string
+          - name: display_name
+            data_type: string
+          - name: xblock_data_json
+            data_type: string
+          - name: order
+            data_type: int32
+          - name: edited_on
+            data_type: string
+          - name: dump_id
+            data_type: uuid
+          - name: time_last_dumped
+            data_type: string
+
+      - name: course_overviews
+        columns:
+          - name: org
+            data_type: string
+          - name: course_key
+            data_type: string
+          - name: display_name
+            data_type: string
+          - name: course_start
+            data_type: string
+          - name: course_end
+            data_type: string
+          - name: enrollment_start
+            data_type: string
+          - name: enrollment_end
+            data_type: string
+          - name: self_paced
+            data_type: bool
+          - name: course_data_json
+            data_type: string
+          - name: created
+            data_type: string
+          - name: modified
+            data_type: string
+          - name: dump_id
+            data_type: uuid
+          - name: time_last_dumped
+            data_type: string
+
+      - name: user_profile
+        columns:
+          - name: id
+            data_type: int32
+          - name: user_id
+            data_type: int32
+          - name: name
+            data_type: string
+          - name: email
+            data_type: string
+          - name: meta
+            data_type: string
+          - name: courseware
+            data_type: string
+          - name: language
+            data_type: string
+          - name: location
+            data_type: string
+          - name: year_of_birth
+            data_type: string
+          - name: gender
+            data_type: string
+          - name: level_of_education
+            data_type: string
+          - name: mailing_address
+            data_type: string
+          - name: city
+            data_type: string
+          - name: country
+            data_type: string
+          - name: state
+            data_type: string
+          - name: goals
+            data_type: string
+          - name: bio
+            data_type: string
+          - name: profile_image_uploaded_at
+            data_type: string
+          - name: phone_number
+            data_type: string
+          - name: dump_id
+            data_type: uuid
+          - name: time_last_dumped
+            data_type: string
+
+      - name: external_id
+        columns:
+          - name: external_user_id
+            data_type: uuid
+          - name: external_id_type
+            data_type: string
+          - name: username
+            data_type: string
+          - name: user_id
+            data_type: int32
+          - name: dump_id
+            data_type: uuid
+          - name: time_last_dumped
+            data_type: string

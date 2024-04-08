@@ -51,8 +51,8 @@ select
     end as completion_bucket
 from completions
 join
-    {{ source("event_sink", "course_names") }} courses
+    {{ ref("course_names") }} courses
     on completions.course_key = courses.course_key
 left join
-    {{ source("event_sink", "course_block_names") }} blocks
+    {{ ref("course_block_names") }} blocks
     on completions.entity_id = blocks.location
