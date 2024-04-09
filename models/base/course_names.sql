@@ -12,6 +12,7 @@
         layout="COMPLEX_KEY_HASHED()",
         lifetime="120",
         source_type="clickhouse",
+        host="localhost",
     )
 }}
 
